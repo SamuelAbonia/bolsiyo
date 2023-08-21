@@ -3,12 +3,14 @@ import { ProductId } from './valueObjects/productId';
 import { ProductName } from './valueObjects/productName';
 import { PurchasePrice } from './valueObjects/purchasePrice';
 import { SalePrice } from './valueObjects/salePrice';
+import { Stock } from './valueObjects/stock';
 
 interface ProductDto {
   id: string;
   name: string;
   purchasePrice: number;
   salePrice: number;
+  stock: number;
   categoryId: string;
 }
 
@@ -17,6 +19,7 @@ export class Product {
   private name: ProductName;
   private purchasePrice: PurchasePrice;
   private salePrice: SalePrice;
+  private stock: Stock;
   private categoryId: CategoryId;
 
   constructor(params: {
@@ -24,14 +27,16 @@ export class Product {
     name: string;
     purchasePrice: number;
     salePrice: number;
+    stock: number;
     categoryId: string;
   }) {
-    const { id, name, purchasePrice, salePrice, categoryId } = params;
+    const { id, name, purchasePrice, salePrice, stock, categoryId } = params;
 
     this.id = new ProductId(id);
     this.name = new ProductName(name);
     this.purchasePrice = new PurchasePrice(purchasePrice);
     this.salePrice = new SalePrice(salePrice);
+    this.stock = new Stock(stock);
     this.categoryId = new CategoryId(categoryId);
   }
 
@@ -41,6 +46,7 @@ export class Product {
       name: this.name.value,
       purchasePrice: this.purchasePrice.value,
       salePrice: this.salePrice.value,
+      stock: this.stock.value,
       categoryId: this.categoryId.value,
     };
   }

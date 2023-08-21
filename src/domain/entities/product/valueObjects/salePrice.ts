@@ -1,5 +1,5 @@
-import { NumberValueObject } from 'src/domain/share/valueObjects/numberValueObject';
-import { SalePriceIsLessThanZeroException } from '../errors/SalePriceIsLessThanZeroException';
+import { NumberValueObject } from '@share/valueObjects/numberValueObject';
+import { SalePriceIsLessThanZeroException } from '../errors/salePriceIsLessThanZeroException';
 
 export class SalePrice extends NumberValueObject {
   readonly value: number;

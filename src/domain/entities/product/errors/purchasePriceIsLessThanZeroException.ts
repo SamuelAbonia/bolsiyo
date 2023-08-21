@@ -5,7 +5,7 @@ export class PurchasePriceIsLessThanZeroException extends Error {
   readonly metaData: object | string = null;
   constructor(message: string, metaData: object | string = null) {
     super(message);
-    this.name = 'ProductPriceWithDiscountIsLessThanZeroException';
+    this.name = 'PruchasePriceIsLessThanZeroException';
     this.status = HttpStatus.BAD_REQUEST;
     this.metaData = metaData;
   }

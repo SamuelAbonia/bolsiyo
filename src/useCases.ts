@@ -1,3 +1,4 @@
+import { ApiLogin } from './auth/application/useCases/login/service';
 import { CategoryCreator } from './category/application/useCases/commands/createCategory/service';
 import { CategoryEraser } from './category/application/useCases/commands/deleteCategory/service';
 import { CategoryFinder } from './category/application/useCases/queries/getByStoreId/service';
@@ -16,4 +17,5 @@ export const useCases = [
   ProductEraser,
   StockUpdater,
   ProductUpdater,
+  ApiLogin,
 ];

@@ -21,6 +21,9 @@ import { MysqlProductRepository } from './product/infra/adapters/mysqlProductRep
 import { ProductController } from './product/infra/controllers/product.controller';
 import { ProductLogsEntity } from './product_logs/domain/productLogs.entity';
 import { MysqlProductLogsRepository } from './product_logs/infra/adapters/mysqlProductLogsRepository';
+import { Auth0Provider } from './auth/infra/adapters/Auth0Api';
+import { HttpModule, HttpService } from '@nestjs/axios';
+import { AuthController } from './auth/infra/controllers/auth.controller';
 
 @Module({
   imports: [
@@ -49,8 +52,9 @@ import { MysqlProductLogsRepository } from './product_logs/infra/adapters/mysqlP
     }),
     TypeOrmModule.forFeature([StoreEntity, CategoryEntity]),
     CqrsModule,
+    HttpModule,
   ],
-  controllers: [CategoryController, ProductController],
+  controllers: [CategoryController, ProductController, AuthController],
   providers: [
     {
       provide: getRepositoryToken(StoreEntity),
@@ -87,6 +91,13 @@ import { MysqlProductLogsRepository } from './product_logs/infra/adapters/mysqlP
           .getRepository(ProductLogsEntity)
           .extend(MysqlProductLogsRepository);
       },
+    },
+    {
+      provide: 'AUHT0_PROVIED',
+      useFactory: (httpService: HttpService): Auth0Provider => {
+        return new Auth0Provider(httpService);
+      },
+      inject: [HttpService],
     },
     ...useCases,
     ...queryHandlers,

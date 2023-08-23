@@ -1,3 +1,4 @@
+import { LoginCommandHandler } from './auth/application/useCases/login/handler';
 import { CreateCategoryCommandHandler } from './category/application/useCases/commands/createCategory/handler';
 import { DeleteCategoryCommandHandler } from './category/application/useCases/commands/deleteCategory/handler';
 import { getByStoreIdQueryHandler } from './category/application/useCases/queries/getByStoreId/handler';
@@ -16,4 +17,5 @@ export const queryHandlers = [
   DeleteProductCommandQueryHandler,
   UpdateStockCommandHandler,
   UpdateProductCommandHandler,
+  LoginCommandHandler,
 ];

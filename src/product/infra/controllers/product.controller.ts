@@ -6,8 +6,10 @@ import {
   Post,
   Put,
   Query,
+  UseGuards,
 } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { AuthorizationGuard } from 'src/auth/infra/authorization.guard';
 import { CreateProductCommand } from 'src/product/application/useCases/commands/createProduct/command';
 import { DeleteProductCommandQuery } from 'src/product/application/useCases/commands/deleteProduct/command';
 import { UpdateProductCommand } from 'src/product/application/useCases/commands/updateProduct/command';
@@ -48,6 +50,7 @@ export class ProductController {
   }
 
   @Get('')
+  @UseGuards(AuthorizationGuard)
   async findProductsByCriteria(@Query() params: any): Promise<ProductDto[]> {
     const query = new FindProductsByCriteriaQuery({
       name: params?.name,

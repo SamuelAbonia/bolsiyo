@@ -22,6 +22,11 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Important
+
+All services are authenticated using Auth0, so it is necesary to use the login endpoint to extract the access token and added in the authorization section
+of every request as a Bearer token
+
 ## Installation
 
 ```bash
@@ -54,11 +59,6 @@ In another console execute the following command
 # watch mode
 $ npm run start:dev
 ```
-
-# Important
-
-All services are authenticated using Auth0, so it is necesary to use the login endpoint to extract the access token and added in the authorization section
-of every request as a Bearer token
 
 ## Support
 

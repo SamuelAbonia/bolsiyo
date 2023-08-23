@@ -32,7 +32,27 @@
 $ npm install
 ```
 
+## Running Database
+
+For the following steps Docker and Docker cli must be installed.
+
+In the root of the repo run the following commands
+
+```bash
+$ cd docker
+$ docker build -t bolsiyo-db .
+$ docker run -d --name mysql-bolsiyo-container -p 3306:3306 bolsiyo-db
+$ mysql -h 127.0.0.1 -P 3306 -u root -p
+```
+
+Then it will ask you for the password: 'password'
+
+Once here copy and paste in the console the content of the db.sql file, this will generate the tables
+and the records to use the endpoints. You can also use tools like dbeaver or Mysql Workbench
+
 ## Running the app
+
+In another console execute the following commands
 
 ```bash
 # development

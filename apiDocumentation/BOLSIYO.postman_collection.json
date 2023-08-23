@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "f5a36367-c2ad-4897-9b48-ceb06c2b067e",
+		"name": "BOLSIYO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20741440"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "getByStoreId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktIendYOFFTaWFKR3ZIRWtELUNJNCJ9.eyJpc3MiOiJodHRwczovL2Rldi1kN2IyZ3JkdWlreGY1NmY0LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiI4V0dHNzhQbFdJbDU1RFVLeFFySDZZTUQ5ZFkzUXp4UEBjbGllbnRzIiwiYXVkIjoiYm9sc2l5by1hcGkiLCJpYXQiOjE2OTI3NDkzMTQsImV4cCI6MTY5MjgzNTcxNCwiYXpwIjoiOFdHRzc4UGxXSWw1NURVS3hRckg2WU1EOWRZM1F6eFAiLCJzY29wZSI6InJlYWQ6dXNlcnNfYXBwX21ldGFkYXRhIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.ZWHv297Djfx7w-25AyKYGstKt6dtKTSwiAnFKA8IiUKM7eFxlfPn3ot14VGNQYsmo9AilwRVS0gIAFYhpKBHwbjT4RgAoWqOzyyAv3sO_uTqeQJQTV6mq3bddcQYTgpZCBdjy-49_0GoaowXMKUNAhN_5R4CGpd2Bb54s172N657Rf0wxPg8qQgeP237V2Fs3XjwqgoVpMYVQ7NJ85orVeSdM1iVZynFjQkTsy6BivtrotCrgyR_DL-bkd_su2DJora5WRXTaikjQxaxRA0QUyViGcmwFvGf50JqAG-SW4rfcr34xIjEAVtsJgbU-cOZIucDZVlhc8nOeNslCR0dYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category?storeId=10e83e04-c6c1-4e30-86e1-3c392796018b",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "storeId",
+									"value": "10e83e04-c6c1-4e30-86e1-3c392796018b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"985b443b-17f6-4c59-994c-f14a321ef34c\",\n    \"name\": \"Papeleria\",\n    \"storeId\": \"10e83e04-c6c1-4e30-86e1-3c392796018b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/category",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category?id=985b443b-17f6-4c59-994c-f14a321ef34c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "985b443b-17f6-4c59-994c-f14a321ef34c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktIendYOFFTaWFKR3ZIRWtELUNJNCJ9.eyJpc3MiOiJodHRwczovL2Rldi1kN2IyZ3JkdWlreGY1NmY0LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiI4V0dHNzhQbFdJbDU1RFVLeFFySDZZTUQ5ZFkzUXp4UEBjbGllbnRzIiwiYXVkIjoiYm9sc2l5by1hcGkiLCJpYXQiOjE2OTI4MDE0OTksImV4cCI6MTY5Mjg4Nzg5OSwiYXpwIjoiOFdHRzc4UGxXSWw1NURVS3hRckg2WU1EOWRZM1F6eFAiLCJzY29wZSI6InJlYWQ6dXNlcnNfYXBwX21ldGFkYXRhIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.Oin5bKMSZk8Kr4ym16kc4A2ur1m6omsiBWOY7JHbW7CyOGkwkTywiRSkaFrthNheoSvIqr2Puo1RQW0nrZqvJwqUtjSbquVK_0rzX7DIiQe-mYtoHrtBUgjfkRb28GLWG9Ub0NoBw2VFALPLJ6XK_j-QSPgSpVWb_M7w-Z6Zn9TDov6uXenCA5NlB1MUVba6bw9NS0PXb7no-p-Qm65isEEhb5fdE4Xo2CAx-XhOlYApnTjgNTZ_63gt8BWFWliQSD9mmwxR7ehC6lsQ2tRmRQCQGy8Xghqr-urHfZ2hsfnHMgtWyYSWS1vqV3PTiwIQjKApiCjFL4gLCQfhbWE5SA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"335e7206-6945-4fa3-b62a-00c7d5c517c0\",\n    \"name\": \"La prueba definitiva 2\",\n    \"purchasePrice\": 300003,\n    \"salePrice\": 2000,\n    \"stock\": 7,\n    \"categoryId\": \"335e7206-6945-4fa3-b62a-00c7d5c517c1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"335e7206-6945-4fa3-b62a-00c7d5c517c8\",\n    \"name\": \"Superman Justice League\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCriteria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktIendYOFFTaWFKR3ZIRWtELUNJNCJ9.eyJpc3MiOiJodHRwczovL2Rldi1kN2IyZ3JkdWlreGY1NmY0LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiI4V0dHNzhQbFdJbDU1RFVLeFFySDZZTUQ5ZFkzUXp4UEBjbGllbnRzIiwiYXVkIjoiYm9sc2l5by1hcGkiLCJpYXQiOjE2OTI3NDIzOTYsImV4cCI6MTY5MjgyODc5NiwiYXpwIjoiOFdHRzc4UGxXSWw1NURVS3hRckg2WU1EOWRZM1F6eFAiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.pk4ZUxIPCXaN4JM1Pjqrs4_FCdLuJrfiZTQx1i0_kTFxgKB9mn2yGoX4ntPmSBZFegt5ACdvKlPJ0ZmYWlSvKFJLMDbgZ0Svwe-9jsT-OsR58KDLEiVxvIE26VQErckJaqFMA9JE90VIbQ-cY00C41yUnQFfTDk-L64cQIKsm2KugyV05l1nG1_C1bVLX6ehEGEXj0YvLUJCS9FsaRTNwMRsNQn9SqhP4zqO4hWKBkR6Qq7e0Zpqv3KUw7HoUX6IIeO8L9iHupuI8dMuyJxAdUmuSOIyA2k4LNske-riszziSplKPO11tt168ybaxnhKBQ0kEADuEPVKVQGVrz5AiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product?name=BARBIE&store=27d9aadc-a051-4205-bb53-27f1638519fd",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "BARBIE"
+								},
+								{
+									"key": "store",
+									"value": "27d9aadc-a051-4205-bb53-27f1638519fd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upateStock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"335e7206-6945-4fa3-b62a-00c7d5c517c1\",\n    \"units\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/product/stock",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product?id=335e7206-6945-4fa3-b62a-00c7d5c517c9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "335e7206-6945-4fa3-b62a-00c7d5c517c9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IktIendYOFFTaWFKR3ZIRWtELUNJNCJ9.eyJpc3MiOiJodHRwczovL2Rldi1kN2IyZ3JkdWlreGY1NmY0LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiI4V0dHNzhQbFdJbDU1RFVLeFFySDZZTUQ5ZFkzUXp4UEBjbGllbnRzIiwiYXVkIjoiYm9sc2l5by1hcGkiLCJpYXQiOjE2OTI3NDkzMTQsImV4cCI6MTY5MjgzNTcxNCwiYXpwIjoiOFdHRzc4UGxXSWw1NURVS3hRckg2WU1EOWRZM1F6eFAiLCJzY29wZSI6InJlYWQ6dXNlcnNfYXBwX21ldGFkYXRhIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.ZWHv297Djfx7w-25AyKYGstKt6dtKTSwiAnFKA8IiUKM7eFxlfPn3ot14VGNQYsmo9AilwRVS0gIAFYhpKBHwbjT4RgAoWqOzyyAv3sO_uTqeQJQTV6mq3bddcQYTgpZCBdjy-49_0GoaowXMKUNAhN_5R4CGpd2Bb54s172N657Rf0wxPg8qQgeP237V2Fs3XjwqgoVpMYVQ7NJ85orVeSdM1iVZynFjQkTsy6BivtrotCrgyR_DL-bkd_su2DJora5WRXTaikjQxaxRA0QUyViGcmwFvGf50JqAG-SW4rfcr34xIjEAVtsJgbU-cOZIucDZVlhc8nOeNslCR0dYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/product/report?from=2023-8-21&to=2023-12-31",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"report"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2023-8-21"
+								},
+								{
+									"key": "to",
+									"value": "2023-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"samuel5661@hotmail.com\",\n    \"password\": \"v_zrv6*XL7UC3cF\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

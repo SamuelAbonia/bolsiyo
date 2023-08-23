@@ -15,7 +15,9 @@ import { DeleteProductCommandQuery } from 'src/product/application/useCases/comm
 import { UpdateProductCommand } from 'src/product/application/useCases/commands/updateProduct/command';
 import { UpdateStockCommand } from 'src/product/application/useCases/commands/updateStock/command';
 import { FindProductsByCriteriaQuery } from 'src/product/application/useCases/queries/findProduct/query';
+import { ProductsReportQuery } from 'src/product/application/useCases/queries/productsReport/query';
 import { ProductDto } from 'src/product/domain/Product';
+import { DateParamsDTO } from './contracts/date-params.dto';
 
 @Controller('product')
 export class ProductController {
@@ -88,5 +90,14 @@ export class ProductController {
     );
 
     return this.commandBus.execute(command);
+  }
+
+  @Get('report')
+  async report(@Query() dateParams: DateParamsDTO) {
+    const { from, to } = dateParams;
+
+    const query = new ProductsReportQuery({ from, to });
+
+    return this.queryBus.execute(query);
   }
 }

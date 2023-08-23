@@ -21,14 +21,18 @@ export const MysqlProductRepository: Pick<ProductRepository, any> = {
     this: Repository<ProductEntity>,
     criteria: ProductCriteria,
   ): Promise<ProductEntity[]> {
+    const { from, name, store, to } = criteria.where;
     const query = this.createQueryBuilder('product')
       .innerJoinAndSelect('product.category', 'category')
-      .innerJoinAndSelect('category.store', 'store')
-      .where('store.id = :store', { store: criteria.where.store });
+      .innerJoinAndSelect('category.store', 'store');
 
-    if (criteria.where.name) {
+    if (store) {
+      query.where('store.id = :store', { store });
+    }
+
+    if (name) {
       query.andWhere('lower(product.name) = :name', {
-        name: criteria.where.name.toLowerCase(),
+        name: name.toLowerCase(),
       });
     }
 
@@ -43,5 +47,24 @@ export const MysqlProductRepository: Pick<ProductRepository, any> = {
     const date = new Date();
     await this.save({ ...record, deletedAt: date });
     return productId;
+  },
+
+  async report(this: Repository<ProductEntity>, criteria: ProductCriteria) {
+    const { from, to } = criteria.where;
+    return this.query(`
+    SELECT 
+      c.id as categoryId, 
+      c.name as categoryName, 
+      p.id as productId, 
+      p.name as productName, 
+      p.stock as stock,
+      p.updated_at as updatedAt
+    FROM 
+      Product p 
+      INNER JOIN Category c ON p.category_id = c.id 
+    WHERE 
+      p.updated_at >= '${from.toISOString()}' 
+      AND p.updated_at <= '${to.toISOString()}';
+    `);
   },
 };

@@ -7,6 +7,7 @@ import { ProductEraser } from './product/application/useCases/commands/deletePro
 import { ProductUpdater } from './product/application/useCases/commands/updateProduct/service';
 import { StockUpdater } from './product/application/useCases/commands/updateStock/service';
 import { ProductFinder } from './product/application/useCases/queries/findProduct/service';
+import { ProductReport } from './product/application/useCases/queries/productsReport/service';
 
 export const useCases = [
   CategoryFinder,
@@ -18,4 +19,5 @@ export const useCases = [
   StockUpdater,
   ProductUpdater,
   ApiLogin,
+  ProductReport,
 ];

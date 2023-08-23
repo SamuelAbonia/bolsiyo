@@ -7,6 +7,7 @@ import { DeleteProductCommandQueryHandler } from './product/application/useCases
 import { UpdateProductCommandHandler } from './product/application/useCases/commands/updateProduct/handler';
 import { UpdateStockCommandHandler } from './product/application/useCases/commands/updateStock/handler';
 import { FindProductsByCriteriaQueryHandler } from './product/application/useCases/queries/findProduct/handler';
+import { ProductsReportQueryHandler } from './product/application/useCases/queries/productsReport/handler';
 
 export const queryHandlers = [
   getByStoreIdQueryHandler,
@@ -18,4 +19,5 @@ export const queryHandlers = [
   UpdateStockCommandHandler,
   UpdateProductCommandHandler,
   LoginCommandHandler,
+  ProductsReportQueryHandler,
 ];

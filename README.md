@@ -48,17 +48,11 @@ and the records to use the endpoints. You can also use tools like dbeaver or Mys
 
 ## Running the app
 
-In another console execute the following commands
+In another console execute the following command
 
 ```bash
-# development
-$ npm run start
-
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 # Important
